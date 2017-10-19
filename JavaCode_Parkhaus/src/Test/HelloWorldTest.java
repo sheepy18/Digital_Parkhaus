@@ -13,6 +13,6 @@ public class HelloWorldTest {
 
     @Test
     public void test() {
-        assertEquals("Hello World", greeter.greetings("World"));
+        assertEquals("Hello World! ", greeter.greetings(""));
     }
 }
