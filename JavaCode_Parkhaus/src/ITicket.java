@@ -1,15 +1,15 @@
 
 
-import java.util.Date;
+import java.util.Calendar;
 
 public interface ITicket {
 	
 	public void setID(int ID);
 	public int getID();
-	public void setDateEnter(Date date);
-	public Date getDateEnter();
-	public void setDatePayed(Date date);
-	public Date getDatePayed();
+	public void setDateEnter(Calendar date);
+	public Calendar getDateEnter();
+	public void setDatePayed(Calendar date);
+	public Calendar getDatePayed();
 	public void setAbo(boolean Abo);
 	public boolean getAbo();
 	

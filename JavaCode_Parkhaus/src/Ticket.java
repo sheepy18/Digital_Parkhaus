@@ -1,6 +1,6 @@
 
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class Ticket implements ITicket{
 
@@ -17,25 +17,25 @@ public class Ticket implements ITicket{
 	}
 
 	@Override
-	public void setDateEnter(Date date) {
+	public void setDateEnter(Calendar date) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Date getDateEnter() {
+	public Calendar getDateEnter() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void setDatePayed(Date date) {
+	public void setDatePayed(Calendar date) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Date getDatePayed() {
+	public Calendar getDatePayed() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -51,5 +51,7 @@ public class Ticket implements ITicket{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 
 }

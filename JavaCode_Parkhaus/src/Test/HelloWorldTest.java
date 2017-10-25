@@ -15,5 +15,4 @@ public class HelloWorldTest {
     public void test() {
         assertEquals("Hello World", greeter.greetings("Hello World"));
     }
-    }
 }

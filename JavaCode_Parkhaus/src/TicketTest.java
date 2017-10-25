@@ -2,7 +2,7 @@
 
 import static org.junit.Assert.*;
 
-import java.util.Date;
+import java.util.Calendar;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,10 +10,12 @@ import org.junit.Test;
 public class TicketTest {
 
 	Ticket t1;
+	Calendar date;
 	
 	@Before
 	public void setUp() throws Exception {
 		t1 = new Ticket();
+		date = Calendar.getInstance();
 	}
 	
 	@Test
@@ -24,14 +26,12 @@ public class TicketTest {
 	
 	@Test
 	public void testsetgetDateEnter() {
-		Date date = new Date();
 		t1.setDateEnter(date);
 		assertEquals(date, t1.getDateEnter());
 	}
 	
 	@Test
 	public void testsetgetDatePayed() {
-		Date date = new Date();
 		t1.setDatePayed(date);
 		assertEquals(date, t1.getDatePayed());
 	}
