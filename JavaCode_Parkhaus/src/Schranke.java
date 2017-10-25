@@ -1,3 +1,4 @@
+import java.util.Calendar;
 
 public class Schranke implements ISchranke {
 
@@ -14,10 +15,12 @@ public class Schranke implements ISchranke {
 	}
 
 	@Override
-	public boolean openExit(Ticket t) {
+	public boolean openExit(Ticket t, Calendar actualTime) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 
 
 
