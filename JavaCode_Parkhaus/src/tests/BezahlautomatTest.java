@@ -1,7 +1,10 @@
+package tests;
+
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,8 +35,8 @@ class BezahlautomatTest {
 	@Test
 	void testpay() {
 		//bei 1€ pro Stunde
-		assertEquals(2f, b.pay(t1, f1, d2), 0.0001);
-		assertEquals(d2, t1.getDatePayed());
+		Assert.assertEquals(2f, b.pay(t1, f1, d2), 0.0001);
+		Assert.assertEquals(d2, t1.getDatePayed());
 	}
 
 }

@@ -1,15 +1,19 @@
-
+package tests;
 
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import interfaces.ITicket;
+import classes.Ticket;
+
 
 public class TicketTest {
 
-	Ticket t1;
+	ITicket t1;
 	Calendar date;
 	
 	@Before
@@ -21,19 +25,19 @@ public class TicketTest {
 	@Test
 	public void testsetgetID() {
 		t1.setID(1);
-		assertEquals(1, t1.getID());
+		Assert.assertEquals(1, t1.getID());
 	}
 	
 	@Test
 	public void testsetgetDateEnter() {
 		t1.setDateEnter(date);
-		assertEquals(date, t1.getDateEnter());
+		Assert.assertEquals(date, t1.getDateEnter());
 	}
 	
 	@Test
 	public void testsetgetDatePayed() {
 		t1.setDatePayed(date);
-		assertEquals(date, t1.getDatePayed());
+		Assert.assertEquals(date, t1.getDatePayed());
 	}
 	
 	@Test

@@ -1,3 +1,5 @@
+package tests;
+
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
@@ -41,7 +43,7 @@ class SchrankeTest {
 	void testOpenEnter() {
 		assertTrue(s.openEnter());
 		
-		//Test Ticket erstellt?
+		//Test classes.Ticket erstellt?
 	}
 
 	@Test

@@ -1,3 +1,7 @@
+package classes;
+
+import interfaces.ISchranke;
+
 import java.util.Calendar;
 
 public class Schranke implements ISchranke {

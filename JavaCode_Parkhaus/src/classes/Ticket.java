@@ -1,8 +1,10 @@
+package classes;
 
+import interfaces.ITicket;
 
 import java.util.Calendar;
 
-public class Ticket implements ITicket{
+public class Ticket implements ITicket {
 
 	@Override
 	public void setID(int ID) {
