@@ -3,57 +3,54 @@ package classes;
 import interfaces.ITicket;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class Ticket implements ITicket {
+	private int ID;
+
+	private boolean abo;
+
+	private Calendar date;  //Erstellungsdatum
+	private Calendar payDate; //Bezahldatum
+
 
 	@Override
 	public void setID(int ID) {
-		// TODO Auto-generated method stub
-		
+		this.ID = ID;
 	}
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
-		return 0;
+		return ID;
 	}
 
 	@Override
 	public void setDateEnter(Calendar date) {
-		// TODO Auto-generated method stub
-		
+		this.date = date;
 	}
 
 	@Override
 	public Calendar getDateEnter() {
-		// TODO Auto-generated method stub
-		return null;
+		return date;
 	}
 
 	@Override
 	public void setDatePayed(Calendar date) {
-		// TODO Auto-generated method stub
-		
+		payDate = date;
 	}
 
 	@Override
 	public Calendar getDatePayed() {
-		// TODO Auto-generated method stub
-		return null;
+		return payDate;
 	}
 
 	@Override
 	public void setAbo(boolean Abo) {
-		// TODO Auto-generated method stub
-		
+		this.abo = Abo;
 	}
 
 	@Override
 	public boolean getAbo() {
-		// TODO Auto-generated method stub
-		return false;
+		return abo;
 	}
-
-
-
 }
