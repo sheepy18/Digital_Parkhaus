@@ -7,16 +7,18 @@ import java.util.Calendar;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import classes.*;
+import interfaces.*;
 
-class BezahlautomatTest {
+public class BezahlautomatTest {
 
-	Bezahlautomat b;
-	Ticket t1;
+	IBezahlautomat b;
+	ITicket t1;
 	Calendar d1, d2;
 	float f1;
 	
 	@Before
-	void setUp() {
+	public void setUp() {
 		b = new Bezahlautomat(); 
 		
 		d1 = Calendar.getInstance();
@@ -33,7 +35,7 @@ class BezahlautomatTest {
 	}
 
 	@Test
-	void testpay() {
+	public void testpay() {
 		//bei 1€ pro Stunde
 		Assert.assertEquals(2f, b.pay(t1, f1, d2), 0.0001);
 		Assert.assertEquals(d2, t1.getDatePayed());

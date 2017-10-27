@@ -4,7 +4,7 @@ import java.util.Calendar;
 import classes.Ticket;
 
 public interface ISchranke {
-	public boolean openEnterAbo(Ticket t);		
+	public boolean openEnterAbo(ITicket t);
 	public boolean openEnter();					//classes.Ticket erstellen
-	public boolean openExit(Ticket t, Calendar actualTime);
+	public boolean openExit(ITicket t, Calendar actualTime);
 }

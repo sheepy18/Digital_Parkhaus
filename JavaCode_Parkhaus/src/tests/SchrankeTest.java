@@ -6,13 +6,15 @@ import java.util.Calendar;
 
 import org.junit.Before;
 import org.junit.Test;
+import classes.*;
+import interfaces.*;
 
-class SchrankeTest {
+public class SchrankeTest {
 
-	Schranke s;
-	Ticket t1, t2, t3;
+	ISchranke s;
+	ITicket t1, t2, t3;
 	Calendar d1, d2, d3;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		

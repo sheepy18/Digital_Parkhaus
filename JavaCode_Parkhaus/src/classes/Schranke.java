@@ -1,13 +1,12 @@
 package classes;
 
-import interfaces.ISchranke;
-
+import interfaces.*;
 import java.util.Calendar;
 
 public class Schranke implements ISchranke {
 
 	@Override
-	public boolean openEnterAbo(Ticket t) {
+	public boolean openEnterAbo(ITicket t) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -19,7 +18,7 @@ public class Schranke implements ISchranke {
 	}
 
 	@Override
-	public boolean openExit(Ticket t, Calendar actualTime) {
+	public boolean openExit(ITicket t, Calendar actualTime) {
 		// TODO Auto-generated method stub
 		return false;
 	}
