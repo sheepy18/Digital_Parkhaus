@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Kunde
+actor Mitarbeiter
+actor Verwalter
+rectangle Parkhaus {
+  Mitarbeiter <|-- Verwalter
+  Kunde -- (Ticket entwerten)
+  (Ticket entwerten) .> (Ticket bezahlen) : <<include>>
+  (Ticket bezahlen) <|-- (mit Karte\nbezahlen)
+  (Ticket bezahlen) <|-- (bar bezahlen)
+
+  Kunde -- (Ticket ziehen)
+  (Parkplatz belegen) <. (Ticket ziehen)  : <<include>>
+  (Ticket ziehen) .> (dauerparkticket\nvorzeigen) : <<extend>>
+  
+  Verwalter -- (Regeln aendern)
+  (Regeln aendern) <|-- (oeffungszeiten\naendern)
+  Verwalter -- (Einnahmen Ueberpruefen)
+}
+@enduml
