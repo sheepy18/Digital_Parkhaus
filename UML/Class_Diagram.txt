@@ -1,0 +1,46 @@
+
+@startuml
+class Eingabemaske {
+}
+class Parkhaus {
+  name : String
+  preisProH: float
+  einnahmen: float
+  freieParkplaetze : int
+  parkplaetze : Parkplatz[][]
+  tickets: Ticket[]
+  schranken: Schranke[]
+  automaten: Bezahlautomat[]
+}
+class Ticket {
+   ID: int
+   dateEnter : Calendar
+   datePayed : Calendar
+   abo: boolean
+   parkplatz : Parkplatz
+}
+abstract class Schranke{
+    ID : int 
+    stateOpenClose: boolean
+}
+class SchrankeEinfahrt{
+}
+class SchrankeAusfahrt{
+}
+class Bezahlautomat {
+     ID: int 
+}
+
+class Parkplatz{
+     ID: int
+     belegt: boolean
+}
+Eingabemaske "1..1" -- "1..1" Parkhaus
+Parkhaus "1..1" -- "0..*" Ticket: erstellt
+Parkhaus  "1..1" o--  "2..* " Schranke
+Parkhaus  "1..1" o--  "1..* " Bezahlautomat
+Parkhaus  "1..1" o-- "1..*" Parkplatz
+Ticket "1..1" -.> "1..1" Parkplatz: parkt auf
+Schranke <|-- SchrankeEinfahrt
+Schranke <|-- SchrankeAusfahrt
+@enduml
