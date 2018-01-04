@@ -13,7 +13,6 @@ public class Ticket implements ITicket {
 	private IParkplatz parkplatz;
 
 	private boolean abo;
-
 	private Calendar date;  //Erstellungsdatum
 	private Calendar payDate; //Bezahldatum
 
@@ -21,6 +20,14 @@ public class Ticket implements ITicket {
 		ID = ++IDCounter;
 		this.date = date;
 	}
+
+    public Ticket(Calendar date, Parkplatz p) {
+        ID = ++IDCounter;
+        this.date = date;
+        this.parkplatz = p;
+        p.setBelegt(true);
+    }
+
 
 	@Override
 	public void setID(int ID) {

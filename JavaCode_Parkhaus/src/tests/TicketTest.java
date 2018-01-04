@@ -57,7 +57,13 @@ public class TicketTest {
 		p2 = new Parkplatz();
 
 		t1.setParkplatz(p1);
-		assertEquals(1, t1.getPartkplatz().getID());
 		assertEquals(true, t1.getPartkplatz().getBelegt());
+	}
+
+	@Test
+	public void TicketDirektParktplatz() {
+		date = Calendar.getInstance();
+		ITicket ticket = new Ticket(date, new Parkplatz());
+		assertEquals(true, ticket.getPartkplatz().getBelegt());
 	}
 }
