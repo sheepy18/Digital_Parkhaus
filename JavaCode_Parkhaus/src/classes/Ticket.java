@@ -1,5 +1,6 @@
 package classes;
 
+import interfaces.IParkplatz;
 import interfaces.ITicket;
 
 import java.util.Calendar;
@@ -9,6 +10,7 @@ public class Ticket implements ITicket {
 	private int ID;
 	private static int IDCounter;
 
+	private IParkplatz parkplatz;
 
 	private boolean abo;
 
@@ -58,5 +60,16 @@ public class Ticket implements ITicket {
 	@Override
 	public boolean getAbo() {
 		return abo;
+	}
+
+	@Override
+	public void setParkplatz(IParkplatz parkplatz) {
+		this.parkplatz = parkplatz;
+		parkplatz.setBelegt(true);
+	}
+
+	@Override
+	public IParkplatz getPartkplatz() {
+		return parkplatz;
 	}
 }

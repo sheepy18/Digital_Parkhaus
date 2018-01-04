@@ -12,4 +12,6 @@ public interface ITicket {
 	public Calendar getDatePayed();
 	public void setAbo(boolean Abo);
 	public boolean getAbo();
+	void setParkplatz(IParkplatz parkplatz);
+	IParkplatz getPartkplatz();
 }

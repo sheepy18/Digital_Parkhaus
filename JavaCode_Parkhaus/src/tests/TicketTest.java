@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.Calendar;
 
+import classes.Parkplatz;
+import interfaces.IParkplatz;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,4 +49,15 @@ public class TicketTest {
 		assertFalse(t1.getAbo());
 	}
 
+
+	@Test
+	public void Parkplatz() {
+		IParkplatz p1, p2;
+		p1 = new Parkplatz();
+		p2 = new Parkplatz();
+
+		t1.setParkplatz(p1);
+		assertEquals(1, t1.getPartkplatz().getID());
+		assertEquals(true, t1.getPartkplatz().getBelegt());
+	}
 }
