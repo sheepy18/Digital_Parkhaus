@@ -11,12 +11,11 @@ import classes.*;
 import interfaces.*;
 
 public class BezahlautomatTest {
+	private IBezahlautomat b;
+	private ITicket t1;
+	private Calendar d1, d2;
+	private float f1;
 
-	IBezahlautomat b;
-	ITicket t1;
-	Calendar d1, d2;
-	float f1;
-	
 	@Before
 	public void setUp() {
 		b = new Bezahlautomat(); 
@@ -25,12 +24,9 @@ public class BezahlautomatTest {
 		d2 = Calendar.getInstance();
 		d2.add(Calendar.HOUR, 2);
 		
-		t1 = new Ticket();
+		t1 = new Ticket(d1);
 		t1.setDateEnter(d1);
-		
-		
 
-		
 		f1 = 5.00f;
 	}
 

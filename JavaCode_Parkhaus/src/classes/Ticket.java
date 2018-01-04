@@ -7,12 +7,18 @@ import java.util.Date;
 
 public class Ticket implements ITicket {
 	private int ID;
+	private static int IDCounter;
+
 
 	private boolean abo;
 
 	private Calendar date;  //Erstellungsdatum
 	private Calendar payDate; //Bezahldatum
 
+	public Ticket(Calendar date) {
+		ID = ++IDCounter;
+		this.date = date;
+	}
 
 	@Override
 	public void setID(int ID) {

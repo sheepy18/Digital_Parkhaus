@@ -10,16 +10,15 @@ import org.junit.Test;
 import interfaces.ITicket;
 import classes.Ticket;
 
-
 public class TicketTest {
 
-	ITicket t1;
-	Calendar date;
+	private ITicket t1;
+	private Calendar date;
 	
 	@Before
-	public void setUp() throws Exception {
-		t1 = new Ticket();
+	public void setUp() {
 		date = Calendar.getInstance();
+		t1 = new Ticket(date);
 	}
 	
 	@Test

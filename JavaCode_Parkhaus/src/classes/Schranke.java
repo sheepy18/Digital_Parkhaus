@@ -22,9 +22,4 @@ public class Schranke implements ISchranke {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-
-
-
-
 }

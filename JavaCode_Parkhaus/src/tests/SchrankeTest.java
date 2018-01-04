@@ -11,12 +11,12 @@ import interfaces.*;
 
 public class SchrankeTest {
 
-	ISchranke s;
-	ITicket t1, t2, t3;
-	Calendar d1, d2, d3;
+	private ISchranke s;
+	private ITicket t1, t2, t3;
+	private Calendar d1, d2, d3;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp()  {
 		
 		s = new Schranke(); 
 		
@@ -25,12 +25,12 @@ public class SchrankeTest {
 		d2.add(Calendar.HOUR, 2);
 		d3 = Calendar.getInstance();
 		d3.add(Calendar.HOUR, 3);
-		t1 = new Ticket();
+		t1 = new Ticket(d1);
 		t1.setAbo(true);
 		
-		t2 = new Ticket();
+		t2 = new Ticket(d2);
 		
-		t3 = new Ticket();
+		t3 = new Ticket(d3);
 		t3.setDateEnter(d1);
 		t3.setDatePayed(d2);
 	}
