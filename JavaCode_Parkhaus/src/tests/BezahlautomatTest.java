@@ -33,9 +33,10 @@ public class BezahlautomatTest {
 	public void testpay() {
 		//bei 1€ pro Stunde
 		assertEquals(2f, b.CalculatePayment(t1, d2), 0.0001);
-		assertEquals(d2, t1.getDatePayed());
-		assertEquals(0.5, b.pay(1.5f), 0.01);
-		assertEquals(0, b.pay(0.5f), 0.01);
+		assertEquals(0, b.einwerfen(2f), 0.01);
+		assertEquals(0, b.einwerfen(100f), 0.01);
+		assertEquals(100, b.pay(t1), 0.01);
+		assertEquals(Calendar.getInstance(), t1.getDatePayed());
 	}
 
 }

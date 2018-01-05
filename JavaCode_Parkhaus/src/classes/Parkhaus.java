@@ -12,10 +12,10 @@ import java.util.Deque;
 public class Parkhaus implements IParkhaus {
 
     private IParkplatz[][] parkplaetze;
-    private Deque<ITicket> tickets;
+    private Deque<ITicket> currentTickets;
 
     public Parkhaus(int etagen, int platzProEtage) {
-        tickets = new ArrayDeque<>();
+        currentTickets = new ArrayDeque<>();
         parkplaetze = new IParkplatz[etagen][platzProEtage];
         for(int i = 0; i < etagen; i++) {
             for(int x = 0; x < platzProEtage; x++) {
@@ -26,7 +26,7 @@ public class Parkhaus implements IParkhaus {
 
     @Override
     public float getPreisProH() {
-        return 0;
+        return Bezahlautomat.getPreisProH();
     }
 
     @Override
@@ -45,13 +45,13 @@ public class Parkhaus implements IParkhaus {
 
         Ticket t = new Ticket(Calendar.getInstance());
         parken(t);
-
+        currentTickets.add(t);
         return t;
     }
 
     @Override
     public void parken(ITicket ticket) {
-        IParkplatz p = getNextAvaiable();
+        IParkplatz p = getNextAvailable();
 
         if (p == null)
             return;
@@ -60,10 +60,10 @@ public class Parkhaus implements IParkhaus {
 
     @Override
     public float getEinnahmen() {
-        return 0;
+        return Bezahlautomat.getEinnahmen();
     }
 
-    public IParkplatz getNextAvaiable() {
+    private IParkplatz getNextAvailable() {
         IParkplatz p;
         for(int i = 0; i < parkplaetze.length; i++) {
             for(int x = 0; x < parkplaetze[0].length; x++) {
