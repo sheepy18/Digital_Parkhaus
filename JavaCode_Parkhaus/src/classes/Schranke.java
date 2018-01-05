@@ -31,4 +31,8 @@ public abstract class Schranke implements ISchranke {
 	public boolean getIsOpen() {
 		return isOpen;
 	}
+
+	public void close() {
+		isOpen = false;
+	}
 }

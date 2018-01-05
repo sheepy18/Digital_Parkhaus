@@ -1,8 +1,6 @@
 package classes;
 
-import interfaces.IParkhaus;
-import interfaces.IParkplatz;
-import interfaces.ITicket;
+import interfaces.*;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -13,15 +11,33 @@ public class Parkhaus implements IParkhaus {
 
     private IParkplatz[][] parkplaetze;
     private Deque<ITicket> currentTickets;
+    private Deque<ISchranke> schranken;
+    private Deque<IBezahlautomat> automaten;
 
     public Parkhaus(int etagen, int platzProEtage) {
         currentTickets = new ArrayDeque<>();
+        schranken =  new ArrayDeque<>();
+        automaten =  new ArrayDeque<>();
+
         parkplaetze = new IParkplatz[etagen][platzProEtage];
+
         for(int i = 0; i < etagen; i++) {
             for(int x = 0; x < platzProEtage; x++) {
                 parkplaetze[i][x] = new Parkplatz();
             }
         }
+
+        addSchranke(new SchrankeEinfahrt());
+        addSchranke(new SchrankeAusfahrt());
+        addAutomat(new Bezahlautomat());
+    }
+
+    public void addSchranke(ISchranke schranke) {
+        schranken.add(schranke);
+    }
+
+    public void addAutomat(IBezahlautomat automat) {
+        automaten.add(automat);
     }
 
     @Override
@@ -63,6 +79,26 @@ public class Parkhaus implements IParkhaus {
         return Bezahlautomat.getEinnahmen();
     }
 
+    @Override
+    public boolean leave(ITicket ticket) {
+        if(ticket.getDatePayed() == null)
+            return false;
+
+        ISchranke schranke = schranken.stream().filter(s -> s instanceof SchrankeAusfahrt).findFirst().get();
+        if(schranke.openExit(ticket, Calendar.getInstance())) {
+            currentTickets.remove(ticket);
+            ticket.getPartkplatz().setBelegt(false);
+            schranke.close();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public IBezahlautomat getAutomat() {
+        return automaten.getFirst();
+    }
+
     private IParkplatz getNextAvailable() {
         IParkplatz p;
         for(int i = 0; i < parkplaetze.length; i++) {
@@ -74,4 +110,5 @@ public class Parkhaus implements IParkhaus {
         }
         return null;
     }
+
 }

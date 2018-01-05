@@ -11,5 +11,6 @@ public interface IParkhaus {
     ITicket ticketZiehen();
     void parken(ITicket ticket);
     float getEinnahmen();
-
+    boolean leave(ITicket ticket);
+    IBezahlautomat getAutomat();
 }

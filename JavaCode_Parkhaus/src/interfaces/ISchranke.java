@@ -7,4 +7,5 @@ public interface ISchranke {
 	 boolean openEnterAbo(ITicket t);
 	 boolean openEnter();					//classes.Ticket erstellen
 	 boolean openExit(ITicket t, Calendar actualTime);
+	void close();
 }
