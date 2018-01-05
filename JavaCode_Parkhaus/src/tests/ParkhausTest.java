@@ -1,7 +1,9 @@
 package tests;
 
+import classes.Decorator;
 import classes.Parkhaus;
 
+import classes.ParkhausDecorator;
 import interfaces.IBezahlautomat;
 import interfaces.IParkhaus;
 import interfaces.ITicket;
@@ -19,6 +21,7 @@ public class ParkhausTest {
 
     IParkhaus parkhaus;
     ArrayList<ITicket> tickets = new ArrayList<>();
+    Decorator decorator;
 
     @Before
     public void setup(){
@@ -88,7 +91,7 @@ public class ParkhausTest {
 
     @Test
     public void bezahlungZuLang() {
-        parkhaus = new Parkhaus(3, 50);
+        parkhaus = new Parkhaus(1, 10);
         tickets.add(parkhaus.ticketZiehen());
         ITicket currentTicket = tickets.get(0);
         IBezahlautomat bA = parkhaus.getAutomat();
@@ -104,5 +107,9 @@ public class ParkhausTest {
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(payed.getTimeInMillis()  + (3600000 / 3) + 1); // eine mili sekunde zu spät
         assertFalse(parkhaus.leave(currentTicket, c ));
+
+
     }
+
+
 }

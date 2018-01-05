@@ -1,5 +1,6 @@
 package classes;
 
+import com.thoughtworks.xstream.XStream;
 import interfaces.*;
 
 import java.util.ArrayDeque;
@@ -13,6 +14,10 @@ public class Parkhaus implements IParkhaus {
     private Deque<ITicket> currentTickets;
     private Deque<ISchranke> schranken;
     private Deque<IBezahlautomat> automaten;
+
+    public Parkhaus() {
+
+    }
 
     public Parkhaus(int etagen, int platzProEtage) {
         currentTickets = new ArrayDeque<>();
@@ -110,5 +115,6 @@ public class Parkhaus implements IParkhaus {
         }
         return null;
     }
+
 
 }

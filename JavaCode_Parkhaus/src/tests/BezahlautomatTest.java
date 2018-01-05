@@ -1,11 +1,13 @@
 package tests;
 
-import java.util.Calendar;
-
+import classes.Bezahlautomat;
+import classes.Ticket;
+import interfaces.IBezahlautomat;
+import interfaces.ITicket;
 import org.junit.Before;
 import org.junit.Test;
-import classes.*;
-import interfaces.*;
+
+import java.util.Calendar;
 
 import static org.junit.Assert.assertEquals;
 
