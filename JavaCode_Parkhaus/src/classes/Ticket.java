@@ -4,7 +4,6 @@ import interfaces.IParkplatz;
 import interfaces.ITicket;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class Ticket implements ITicket {
 	private int ID;
@@ -21,7 +20,7 @@ public class Ticket implements ITicket {
 		this.date = date;
 	}
 
-    public Ticket(Calendar date, Parkplatz p) {
+    public Ticket(Calendar date, IParkplatz p) {
         ID = ++IDCounter;
         this.date = date;
         this.parkplatz = p;
