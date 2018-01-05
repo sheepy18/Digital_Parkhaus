@@ -4,8 +4,6 @@ class Eingabemaske {
 }
 class Parkhaus {
   name : String
-  preisProH: float
-  einnahmen: float
   freieParkplaetze : int
   parkplaetze : Parkplatz[][]
   tickets: Ticket[]
@@ -21,7 +19,7 @@ class Ticket {
 }
 abstract class Schranke{
     ID : int 
-    stateOpenClose: boolean
+    isOpen: boolean
 }
 class SchrankeEinfahrt{
 }
@@ -29,6 +27,8 @@ class SchrankeAusfahrt{
 }
 class Bezahlautomat {
      ID: int 
+  {static}preisProH: float
+  {static}einnahmen: float
 }
 
 class Parkplatz{
