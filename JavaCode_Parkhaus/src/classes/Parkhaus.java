@@ -80,12 +80,12 @@ public class Parkhaus implements IParkhaus {
     }
 
     @Override
-    public boolean leave(ITicket ticket) {
+    public boolean leave(ITicket ticket, Calendar currentTime) {
         if(ticket.getDatePayed() == null)
             return false;
 
         ISchranke schranke = schranken.stream().filter(s -> s instanceof SchrankeAusfahrt).findFirst().get();
-        if(schranke.openExit(ticket, Calendar.getInstance())) {
+        if(schranke.openExit(ticket, currentTime)) {
             currentTickets.remove(ticket);
             ticket.getPartkplatz().setBelegt(false);
             schranke.close();

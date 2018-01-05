@@ -9,13 +9,12 @@ import java.util.Calendar;
  */
 public class SchrankeAusfahrt extends Schranke {
     @Override
-    public boolean openExit(ITicket t, Calendar actualTime) {
-        //TODO den Kram vom Controller(Parkhaus) überprüfen lassen
+    public boolean openExit(ITicket t, Calendar currentTime) {
         boolean bezahlZeit = false;
         if(t.getDatePayed() != null)
         {
             long bezahlt = t.getDatePayed().getTimeInMillis();
-            long current = actualTime.getTimeInMillis();
+            long current = currentTime.getTimeInMillis();
             bezahlZeit =  (bezahlt + (3600000 / 3)) >= current; // 1 std = 3600000 milisek
         }
         setOpen(bezahlZeit || t.getAbo());

@@ -1,6 +1,8 @@
 package interfaces;
 
 
+import java.util.Calendar;
+
 /**
  * Created by Lukas on 04.01.2018.
  */
@@ -11,6 +13,6 @@ public interface IParkhaus {
     ITicket ticketZiehen();
     void parken(ITicket ticket);
     float getEinnahmen();
-    boolean leave(ITicket ticket);
+    boolean leave(ITicket ticket, Calendar currentTime);
     IBezahlautomat getAutomat();
 }
