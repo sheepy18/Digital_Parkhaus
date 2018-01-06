@@ -6,8 +6,7 @@ class ManagerView{
 class CustomerView{
 }
 class EingabeController {
-	loadManagerView()
-	loadCustomerView()
+	loadView()
 }
 class Parkhaus {
   name : String

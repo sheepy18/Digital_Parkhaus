@@ -1,4 +1,4 @@
-package classes;
+package classes.models;
 
 import interfaces.IParkplatz;
 import interfaces.ITicket;

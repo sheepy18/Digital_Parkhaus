@@ -1,6 +1,6 @@
 package tests;
 
-import classes.Parkplatz;
+import classes.models.Parkplatz;
 import interfaces.IParkplatz;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,9 +1,8 @@
 package tests;
 
-import classes.Decorator;
-import classes.Parkhaus;
+import classes.models.Decorator;
+import classes.models.Parkhaus;
 
-import classes.ParkhausDecorator;
 import interfaces.IBezahlautomat;
 import interfaces.IParkhaus;
 import interfaces.ITicket;

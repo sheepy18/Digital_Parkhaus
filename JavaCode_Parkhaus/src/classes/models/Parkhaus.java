@@ -1,6 +1,5 @@
-package classes;
+package classes.models;
 
-import com.thoughtworks.xstream.XStream;
 import interfaces.*;
 
 import java.util.ArrayDeque;

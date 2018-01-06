@@ -1,4 +1,4 @@
-package classes;
+package classes.models;
 
 /**
  * Created by Lukas on 04.01.2018.

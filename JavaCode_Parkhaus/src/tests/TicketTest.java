@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 
 import java.util.Calendar;
 
-import classes.Parkplatz;
+import classes.models.Parkplatz;
 import interfaces.IParkplatz;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import interfaces.ITicket;
-import classes.Ticket;
+import classes.models.Ticket;
 
 public class TicketTest {
 

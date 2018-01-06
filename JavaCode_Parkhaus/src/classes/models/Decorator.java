@@ -1,4 +1,4 @@
-package classes;
+package classes.models;
 
 public abstract class Decorator extends Parkhaus {
         private Parkhaus parkhaus;

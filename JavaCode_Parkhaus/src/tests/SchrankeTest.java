@@ -4,9 +4,11 @@ import static org.junit.Assert.*;
 
 import java.util.Calendar;
 
+import classes.models.SchrankeAusfahrt;
+import classes.models.SchrankeEinfahrt;
+import classes.models.Ticket;
 import org.junit.Before;
 import org.junit.Test;
-import classes.*;
 import interfaces.*;
 
 public class SchrankeTest {
@@ -49,7 +51,7 @@ public class SchrankeTest {
 	public void testOpenEnter() {
 		assertTrue(einfahrt.openEnter());
 		
-		//Test classes.Ticket erstellt?
+		//Test classes.models.Ticket erstellt?
 
 	}
 

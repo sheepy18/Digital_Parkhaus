@@ -1,7 +1,7 @@
 package tests;
 
-import classes.Bezahlautomat;
-import classes.Ticket;
+import classes.models.Bezahlautomat;
+import classes.models.Ticket;
 import interfaces.IBezahlautomat;
 import interfaces.ITicket;
 import org.junit.Before;
