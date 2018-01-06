@@ -7,7 +7,7 @@ import classes.view.View;
 
 import java.util.Scanner;
 
-public class Eingabecontroller {
+public class Eingabecontroller  {
 
     private Parkhaus parkhaus;
     private View menu;
@@ -59,5 +59,9 @@ public class Eingabecontroller {
 
     public void speichern() {
         new ParkhausDecorator(parkhaus).toXmlFile();
+    }
+
+    public void update() {
+        start();
     }
 }

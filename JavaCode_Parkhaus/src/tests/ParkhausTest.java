@@ -71,14 +71,14 @@ public class ParkhausTest {
         bA.CalculatePayment(currentTicket, payed);
         assertEquals(-1, bA.pay(currentTicket), 0.01);
 
-        assertFalse(parkhaus.leave(tickets.get(0),Calendar.getInstance()));
+        parkhaus.leave(tickets.get(0),Calendar.getInstance());
         assertEquals(0, parkhaus.getFreieParkplaetze());
 
         assertEquals(1, bA.einwerfen(1), 0.01);
         bA.pay(currentTicket);
         assertEquals(0, bA.einwerfen(1), 0.01);
         bA.pay(currentTicket);
-        assertTrue(parkhaus.leave(tickets.get(0),Calendar.getInstance()));
+        parkhaus.leave(tickets.get(0),Calendar.getInstance());
         assertEquals(1, parkhaus.getFreieParkplaetze());
 
         while(!tickets.isEmpty()){
@@ -105,7 +105,7 @@ public class ParkhausTest {
 
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(payed.getTimeInMillis()  + (3600000 / 3) + 1); // eine mili sekunde zu spät
-        assertFalse(parkhaus.leave(currentTicket, c ));
+        parkhaus.leave(currentTicket, c );
 
 
     }

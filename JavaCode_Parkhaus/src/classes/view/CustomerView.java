@@ -24,6 +24,7 @@ public class CustomerView extends View {
     }
 
     public void chooseInput(char input) {
+        controller.clear();
         super.chooseInput(input);
         int IDTicket;
         ITicket ticket = null;
@@ -46,7 +47,7 @@ public class CustomerView extends View {
                 IDTicket = sc.nextInt();
                 ticket = parkhaus.getTicket(IDTicket);
                 if (ticket != null) {
-                    System.out.print(ticket.toString()); //TODO toString in ticket überschreiben
+                    System.out.println(ticket.toString()); //TODO toString in ticket überschreiben
                 }
                 else {
                     //TODO fehlerausgabe kein ticket mit id gefunden
@@ -79,7 +80,11 @@ public class CustomerView extends View {
                 ticket = parkhaus.getTicket(IDTicket);
 
                 if(ticket != null){
-                    parkhaus.leave(ticket, Calendar.getInstance());
+                    if(parkhaus.leave(ticket, Calendar.getInstance())){
+                        System.out.println("Erfolgreich das Parkhaus verlassen!");
+                    } else {
+                        System.out.println("Sie müssen zuerst das Ticket "+ ticket.toString() + " bezahlen!");
+                    }
                 } else {
                     //TODO fehlerausgabe kein ticket mit id gefunden
                 }
@@ -87,5 +92,7 @@ public class CustomerView extends View {
             default:
                 //TODO fehlerausgabe nicht richtige eingabe
         }
+
+        controller.update();
     }
 }
