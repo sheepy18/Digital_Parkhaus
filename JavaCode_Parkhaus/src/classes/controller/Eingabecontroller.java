@@ -18,4 +18,12 @@ public class Eingabecontroller {
     public Parkhaus getParkhaus() {
         return parkhaus;
     }
+
+    public void start() {
+
+    }
+
+    public String loadView() {
+        return menu.toString();
+    }
 }

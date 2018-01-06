@@ -9,6 +9,6 @@ public class CustomerView extends View {
     }
     @Override
     public String toString() {
-        return null;
+        return super.toString();
     }
 }

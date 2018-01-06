@@ -115,5 +115,16 @@ public class Parkhaus implements IParkhaus {
         return null;
     }
 
+    public String toString() {
+        String result = "Freie Parkplaetze: " + getFreieParkplaetze() + "\n\n";
 
+        for(int j = 0; j < parkplaetze.length; j++) {
+            result += (j+1) + ".Etage:\n";
+           for(int i = 0; i < parkplaetze[0].length; i++) {
+               result += (parkplaetze[j][i].getBelegt())? "+" : "#";
+           }
+            result += "\n";
+        }
+        return result;
+    }
 }

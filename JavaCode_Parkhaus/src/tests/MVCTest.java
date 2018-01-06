@@ -15,6 +15,6 @@ public class MVCTest {
 
     @Test
     public void parkhausToString() {
-
+        String txt = controller.loadView();
     }
 }
