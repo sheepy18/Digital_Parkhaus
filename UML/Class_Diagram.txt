@@ -1,6 +1,13 @@
-
 @startuml
-class Eingabemaske {
+class View{
+}
+class ManagerView{
+}
+class CustomerView{
+}
+class EingabeController {
+	loadManagerView()
+	loadCustomerView()
 }
 class Parkhaus {
   name : String
@@ -35,7 +42,10 @@ class Parkplatz{
      ID: int
      belegt: boolean
 }
-Eingabemaske "1..1" -- "1..1" Parkhaus
+View <|-up- ManagerView
+View <|-up- CustomerView
+EingabeController -up- View
+EingabeController "1..1" -- "1..1" Parkhaus
 Parkhaus "1..1" -- "0..*" Ticket: erstellt
 Parkhaus  "1..1" o--  "2..* " Schranke
 Parkhaus  "1..1" o--  "1..* " Bezahlautomat
