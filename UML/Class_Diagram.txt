@@ -1,12 +1,24 @@
 @startuml
+interface Observable{
+	observers : List<Observer>
+	update()
+}
+interface Observer{
+	update()
+}
 class View{
+	toString(): String
 }
 class ManagerView{
 }
 class CustomerView{
 }
 class EingabeController {
+	menu : View
+	parkhaus: Parkhaus
 	loadView()
+	update()
+	setview()
 }
 class Parkhaus {
   name : String
@@ -41,6 +53,8 @@ class Parkplatz{
      ID: int
      belegt: boolean
 }
+View <|-right- Observer
+Observer -- Observable
 View <|-up- ManagerView
 View <|-up- CustomerView
 EingabeController -up- View
