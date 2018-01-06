@@ -17,4 +17,8 @@ public class ManagerView extends  View {
     public String options() {
         return "";
     }
+
+    public void chooseInput(char input) {
+        super.chooseInput(input);
+    }
 }

@@ -128,6 +128,14 @@ public class Parkhaus implements IParkhaus {
         return result;
     }
 
+    public boolean bezahlen(int ID) {
+        ITicket ticket = getTicket(ID);
+        if(ticket == null)
+            return true;
+
+        return getAutomat().pay(ticket) <= 0;
+    }
+
     public ITicket getTicket(int ID) {
         if(currentTickets.size() <= 0)
             return null;

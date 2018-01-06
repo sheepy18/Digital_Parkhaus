@@ -1,14 +1,13 @@
 package classes.controller;
 
 import classes.models.Parkhaus;
+import classes.models.ParkhausDecorator;
 import classes.view.CustomerView;
 import classes.view.View;
-import interfaces.ITicket;
 
 import java.util.Scanner;
 
 public class Eingabecontroller {
-
 
     private Parkhaus parkhaus;
     private View menu;
@@ -16,6 +15,16 @@ public class Eingabecontroller {
     public Eingabecontroller() {
         parkhaus = new Parkhaus(3, 20);
         menu = new CustomerView(this);
+    }
+
+    public Eingabecontroller(boolean fromFile) {
+        if(fromFile) {
+            parkhaus = new ParkhausDecorator(parkhaus).fromXMLToParkhaus();
+            menu = new CustomerView(this);
+        } else {
+            parkhaus = new Parkhaus(3, 20);
+            menu = new CustomerView(this);
+        }
     }
 
     public Parkhaus getParkhaus() {
@@ -45,33 +54,10 @@ public class Eingabecontroller {
     }
 
     public void chooseInput(char input) {
-        ITicket ticket = null;
-        switch (input)
-        {
-            case 'p':
-                ticket = parkhaus.ticketZiehen();
-                if( ticket != null) {
-                    System.out.print("Ihre Ticketnummer: " + ticket.getID()+ "\n");
-                }
-                else {
-                    //TODO fehlerausgabe parken nicht möglich
-                }
-                break;
-            case 't':
-                int IDTicket;
-                Scanner sc = new Scanner(System.in);
-                IDTicket = sc.nextInt();
-                ticket = parkhaus.getTicket(IDTicket);
-                if (ticket != null) {
-                    ticket.toString(); //TODO toString in ticket überschreiben
-                }
-                else {
-                    //TODO fehlerausgabe kein ticket mit id gefunden
-                }
-                break;
+       menu.chooseInput(input);
+    }
 
-            default:
-                //TODO fehlerausgabe nciht richtige eingabe
-        }
+    public void speichern() {
+        new ParkhausDecorator(parkhaus).toXmlFile();
     }
 }

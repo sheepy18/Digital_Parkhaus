@@ -16,4 +16,8 @@ public abstract class View {
 
     //input optionen für entsprechende sicht
     public abstract String options();
+
+    public void chooseInput(char input) {
+
+    }
 }
