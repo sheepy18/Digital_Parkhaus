@@ -9,6 +9,11 @@ public class CustomerView extends View {
     }
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() + "\n" + options();
+    }
+
+    @Override
+    public String options() {
+        return "";
     }
 }

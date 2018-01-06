@@ -127,4 +127,14 @@ public class Parkhaus implements IParkhaus {
         }
         return result;
     }
+
+    public ITicket getTicket(int ID) {
+        if(currentTickets.size() <= 0)
+            return null;
+
+        return currentTickets.stream()
+                .filter(t -> t.getID() == ID)
+                .findFirst()
+                .get();
+    }
 }

@@ -13,4 +13,7 @@ public abstract class View {
     public String toString() {
         return controller.getParkhaus().toString();
     }
+
+    //input optionen für entsprechende sicht
+    public abstract String options();
 }

@@ -10,6 +10,11 @@ public class ManagerView extends  View {
 
     @Override
     public String toString() {
-        return null;
+        return super.toString() + "\n" + options();
+    }
+
+    @Override
+    public String options() {
+        return "";
     }
 }
