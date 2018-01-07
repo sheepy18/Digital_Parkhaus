@@ -11,6 +11,8 @@ public class Bezahlautomat implements IBezahlautomat {
 	private static Map<Calendar, Float> einnahmen;
 	private static float preisProH = 1f;
 
+
+
 	private float currentPayment;
 	private float eingeworfen;
 
