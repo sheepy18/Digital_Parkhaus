@@ -2,13 +2,21 @@ package classes.models;
 
 import interfaces.IBezahlautomat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
 import interfaces.*;
 
 public class Bezahlautomat implements IBezahlautomat {
-	private static float einnahmen = 0f;
+	private static Map<Calendar, Float> einnahmen;
 	private static float preisProH = 1f;
+
 	private float currentPayment;
 	private float eingeworfen;
+
+	public Bezahlautomat() {
+		einnahmen = new HashMap<>();
+	}
 
 	@Override
 	public float CalculatePayment(ITicket t, Calendar currentTime) {
@@ -27,8 +35,9 @@ public class Bezahlautomat implements IBezahlautomat {
 		if(currentPayment > eingeworfen)
 			return -1;
 		eingeworfen -= currentPayment;
-		einnahmen += currentPayment;
+
 		t.setDatePayed(Calendar.getInstance());
+		einnahmen.put(t.getDatePayed(), currentPayment);
 		tmp = eingeworfen;
 		//reset
 		currentPayment = 0;
@@ -53,7 +62,7 @@ public class Bezahlautomat implements IBezahlautomat {
 	public static void setPreisProH(float preisProH) {
 		Bezahlautomat.preisProH = preisProH;
 	}
-	public static float getEinnahmen() {
+	public static Map<Calendar, Float> getEinnahmen() {
 		return einnahmen;
 	}
 }
