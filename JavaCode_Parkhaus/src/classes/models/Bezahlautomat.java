@@ -67,4 +67,8 @@ public class Bezahlautomat implements IBezahlautomat {
 	public static Map<Calendar, Float> getEinnahmen() {
 		return einnahmen;
 	}
+
+	public static void setEinnahmen(Map<Calendar, Float> map) {
+		einnahmen = map;
+	}
 }

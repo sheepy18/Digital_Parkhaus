@@ -1,11 +1,12 @@
 package classes.templatMethod;
 
+
+
 public abstract class Einnahmen {
 
-
-    float getEinnahmen(){
+    double getEinnahmen(){
         return getSpecificEinnahmen();
     }
 
-  abstract float getSpecificEinnahmen();
+  abstract double getSpecificEinnahmen();
 }

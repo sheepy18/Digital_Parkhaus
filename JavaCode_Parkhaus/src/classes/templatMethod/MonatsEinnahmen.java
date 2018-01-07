@@ -2,7 +2,7 @@ package classes.templatMethod;
 
 public class MonatsEinnahmen extends Einnahmen  {
     @Override
-    float getSpecificEinnahmen() {
+    double getSpecificEinnahmen() {
         return 0;
     }
 }
