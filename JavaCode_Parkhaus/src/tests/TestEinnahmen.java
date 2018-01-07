@@ -29,6 +29,7 @@ public class TestEinnahmen {
                 Calendar.getInstance()
         };
 
+        dates[1].setTimeInMillis(Calendar.getInstance().getTimeInMillis() + 200);
         dates[2].set(2018, Calendar.JANUARY, 3);
         dates[3].set(2018, Calendar.FEBRUARY, 1);
         dates[4].set(2017, Calendar.JANUARY, 6);
