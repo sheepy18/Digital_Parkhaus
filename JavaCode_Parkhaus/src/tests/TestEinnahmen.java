@@ -3,6 +3,8 @@ package tests;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
+
 public class TestEinnahmen {
 
 
@@ -13,6 +15,6 @@ public class TestEinnahmen {
 
     @Test
     public void tagesEinnahmen() {
-
+        Calendar[] dayDates = {};
     }
 }
