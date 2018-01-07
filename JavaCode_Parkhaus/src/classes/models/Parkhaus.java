@@ -76,7 +76,7 @@ public class Parkhaus implements IParkhaus {
     }
 
     @Override
-    public float getEinnahmen() {
+    public Map<Calendar, Float> getEinnahmen() {
         return Bezahlautomat.getEinnahmen();
     }
 
