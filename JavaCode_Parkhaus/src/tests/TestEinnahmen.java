@@ -1,8 +1,7 @@
 package tests;
 
 import classes.models.Bezahlautomat;
-import classes.templatMethod.Einnahmen;
-import classes.templatMethod.Tageseinnahmen;
+import classes.templatMethod.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,11 +29,9 @@ public class TestEinnahmen {
                 Calendar.getInstance()
         };
 
-        dates[0].set(2018, Calendar.DECEMBER, 28);
-        dates[1].set(2018, Calendar.DECEMBER, 28);
-        dates[2].set(2018, Calendar.DECEMBER, 25);
-        dates[3].set(2018, Calendar.AUGUST, 25);
-        dates[4].set(2018, Calendar.JANUARY, 6);
+        dates[2].set(2018, Calendar.JANUARY, 3);
+        dates[3].set(2018, Calendar.FEBRUARY, 1);
+        dates[4].set(2017, Calendar.JANUARY, 6);
 
         float[] bezahlungen = {5, 10, 4, 3, 2};
 
@@ -48,6 +45,26 @@ public class TestEinnahmen {
     @Test
     public void tagesEinnahmen() {
         Einnahmen einahmen = new Tageseinnahmen();
+
         assertEquals(15 , einahmen.getEinnahmen(), 0.001);
+    }
+
+    @Test
+    public void wochenEinnahmen() {
+        Einnahmen einahmen = new WochenEinnahmen();
+
+        assertEquals(19 , einahmen.getEinnahmen(), 0.001);
+    }
+    @Test
+    public void monatsEinnahmen() {
+        Einnahmen einahmen = new MonatsEinnahmen();
+
+        assertEquals(19 , einahmen.getEinnahmen(), 0.001);
+    }
+    @Test
+    public void jahresEinnahmen() {
+        Einnahmen einahmen = new JahresEinnahmen();
+
+        assertEquals(22 , einahmen.getEinnahmen(), 0.001);
     }
 }

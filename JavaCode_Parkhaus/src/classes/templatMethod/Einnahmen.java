@@ -8,7 +8,7 @@ import java.util.Map;
 
 public abstract class Einnahmen {
 
-    double getEinnahmen(){
+    public double getEinnahmen(){
         return getSpecificEinnahmen(Bezahlautomat.getEinnahmen(), Calendar.getInstance());
     }
 
